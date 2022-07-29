@@ -1,0 +1,60 @@
+<div
+  class="d-flex mobile-backdrop"
+  [@openClose]="{
+    value: !useSideBar.isExpanded ? 'open' : 'closed',
+    params: { position: positionClass() }
+  }"
+>
+  <div class="sidebar" [class.is-inactive]="useSideBar.isExpanded">
+    <div class="header">
+      <h3 class="text-center">Escola</h3>
+
+      <button class="btn-unstyled fs-5 is-open mobile-item is-block" (click)="useSideBar.toggle()">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+    </div>
+
+    <ul metis-menu class="menu-items list-unstyled">
+      <li *ngFor="let item of navItens">
+        <a
+          *ngIf="!item.children"
+          class="menu-item"
+          [routerLink]="item.url"
+          [queryParams]="item.queryParams"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <i class="{{ item.icon }} fa-fw"></i>
+          <span>{{ item.name }}</span>
+        </a>
+
+        <a *ngIf="item.children" href="javascript:void(0)" class="menu-item has-arrow">
+          <i class="{{ item.icon }} fa-fw"></i>
+          <span>{{ item.name }}</span>
+        </a>
+
+        <ul class="list-unstyled" *ngIf="item.children">
+          <li *ngFor="let children of item.children">
+            <a
+              class="menu-item"
+              [routerLink]="children.url"
+              [queryParams]="children.queryParams"
+              routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <i class="fa-fw"></i>
+              <span>{{ children.name }}</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a class="menu-item" href="javascript:void(0)" (click)="logout()">
+          <i class="fas fa-sign-out-alt fa-fw"></i>
+          <span>Sair</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+.notification {
+  &.dropdown {
+    @media (max-width: 576px) {
+      position: static;
+    }
+  }
+
+  .dropdown-menu {
+    min-width: 18rem;
+
+    @media (max-width: 576px) {
+      right: 2.5vw;
+      left: 2.5vw;
+      width: 90vw;
+      margin: 0 auto;
+    }
+  }
+
+  .notification-item {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 1rem;
+    color: #212529;
+
+    a {
+      text-decoration: none;
+    }
+
+    .title {
+      font-size: 12px;
+    }
+
+    .message {
+      font-size: 14px;
+    }
+
+    small {
+      font-size: 10px;
+    }
+
+    &:hover {
+      color: #1e2125;
+      background-color: #e9ecef;
+    }
+  }
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.dropdown-menu-end {
+  right: 0;
+}

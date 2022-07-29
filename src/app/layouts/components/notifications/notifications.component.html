@@ -1,0 +1,27 @@
+<div ngbDropdown class="notification">
+  <a href="javascript: void(0);" class="text-decoration-none fw-bold" id="notifications" ngbDropdownToggle>
+    <i class="fas fa-bell"></i> Notificações {{ notifications.length ? "(" + notifications.length + ")" : "" }}
+  </a>
+
+  <div ngbDropdownMenu class="dropdown-menu-end shadow-sm" aria-labelledby="notifications">
+    <div class="notification-item" *ngIf="!notifications.length">Não há novas notificações</div>
+
+    <div class="notification-item" *ngFor="let notify of notifications | slice: 0:8">
+      <a class="flex-fill" *ngIf="notify.routerLink" [routerLink]="notify.routerLink">
+        <p class="title">{{ notify.title }}</p>
+        <p class="message">{{ notify.message }}</p>
+        <small>{{ notify.createdAt | timeDistance }}</small>
+      </a>
+
+      <div class="flex-fill" *ngIf="!notify.routerLink">
+        <p class="title">{{ notify.title }}</p>
+        <p class="message">{{ notify.message }}</p>
+        <small>{{ notify.createdAt | timeDistance }}</small>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" (change)="handleRead(notify)" />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {      
+      "@contexts/*": [
+        "src/app/core/contexts/*"
+      ],
+      "@models/*": [
+        "src/app/core/models/*"
+      ],
+      "@guards/*": [
+        "src/app/core/guards/*"
+      ],
+      "@exceptions/*": [
+        "src/app/core/exceptions/*"
+      ],
+      "@providers/*": [
+        "src/app/core/providers/*"
+      ],
+      "@resources/*": [
+        "src/app/core/resources/*"
+      ],
+      "@services/*": [
+        "src/app/core/services/*"
+      ],
+      "@utils/*": [
+        "src/app/core/utils/*"
+      ],
+      "@pages/*": [
+        "src/app/pages/*"
+      ],
+      "@layouts/*": [
+        "src/app/layouts/*"
+      ],
+      "@forms/*": [
+        "src/app/shared/components/forms/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

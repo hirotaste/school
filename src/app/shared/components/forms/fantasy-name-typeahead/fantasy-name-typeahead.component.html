@@ -1,0 +1,17 @@
+<ng-select
+  [items]="items"
+  [typeahead]="input$"
+  [formControl]="control"
+  [loading]="isLoading"
+  bindLabel="fantasyName"
+  placeholder="Nome da empresa"
+  typeToSearchText="Comece a digitar para iniciar a pesquisa..."
+  notFoundText="Nenhuma empresa encontrada. Clique no link acima."
+  loadingText="Pesquisando..."
+  [hideSelected]="true"
+  [minTermLength]="3"
+  addTagText=""
+  [addTag]="false"
+  (change)="changeFantasyName($event)"
+>
+</ng-select>

@@ -1,0 +1,8 @@
+<header class="main-header" [class.px-5]="smallContainer" [class.text-center]="smallContainer">
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <p *ngIf="subtitle">{{ subtitle }}</p>
+
+    <ng-content></ng-content>
+  </div>
+</header>

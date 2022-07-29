@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="navbar">
+    <div class="nav-start ms-5">
+      <button class="btn-unstyled fs-5" (click)="useSideBar.toggle()">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <h4>{{ title }}</h4>
+    </div>
+
+    <div class="nav-end">
+      <div ngbDropdown>
+        <div class="d-flex justify-content-center align-items-center rounded-circle">
+          <a href="javascript: void(0);" id="dropdownBasic1" ngbDropdownToggle class="account text-white">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="end-0">
+          <h6 class="dropdown-header">Menu</h6>
+          <button ngbDropdownItem (click)="logout()">Sair</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

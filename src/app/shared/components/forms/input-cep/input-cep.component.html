@@ -1,0 +1,17 @@
+<label *ngIf="label" [for]="id" class="form-label">{{ label }}</label>
+
+<div class="position-relative">
+  <input
+    [id]="id"
+    class="form-control"
+    [formControl]="control"
+    [attr.placeholder]="placeholder"
+    mask="00000-000"
+    (blur)="handleSearchCep()"
+    autocomplete="postal-code"
+  />
+
+  <span class="spinner-searching" *ngIf="lookingForZipCode">
+    <span class="spinner-grow spinner-grow-sm"></span>
+  </span>
+</div>

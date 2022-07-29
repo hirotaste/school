@@ -1,0 +1,53 @@
+<div class="container content-spacing p-5">
+  <div class="d-flex justify-content-between">
+    <a class="btn btn-primary col-md-3 mb-2" routerLink="/students/create">Cadastrar</a>
+    <form [formGroup]="form" class="col-md-8 mb-2">
+      <div>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="term"
+          placeholder="Pesquise por Nome"
+          [formGroup]="form"
+        />
+      </div>
+    </form>
+  </div>
+
+  <div class="card-box">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th class="text-center" style="width: 10%">Detalhes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngIf="!isLoading">
+            <tr *ngIf="!students.length">
+              <td colspan="5" class="text-center pt-5">Não foram encontrados alunos</td>
+            </tr>
+
+            <tr *ngFor="let item of students; let i = index">
+              <td>{{ item.name }}</td>
+              <td>{{ item.email }}</td>
+              <td>{{ item.cpf | mask: "000.000.000-00" }}</td>
+              <td>
+                {{ item.telephone | mask:"(00) 0 0000-0000" }}
+              </td>
+              <td class="text-end">
+                <a [routerLink]="['/students', item.id, 'edit']" ngbTooltip="Edit">
+                  <i class="fas fa-angle-right"></i>
+                </a>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

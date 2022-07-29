@@ -1,0 +1,153 @@
+$sidebar-width: 20rem;
+$active-color: var(--bs-gray-dark);
+$active-border-color: var(--bs-tertiary);
+
+:host {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: var(--bs-body-color);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  min-width: $sidebar-width;
+  background: #ccd3db;
+  border-right: 1px solid #ededed;
+  transition: all 0.2s;
+
+  &.is-inactive {
+    margin-left: -$sidebar-width;
+  }
+
+  .header {
+    height: 3.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.25rem;
+
+    h3 {
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: #283252;
+    }
+  }
+
+  .avatar-container {
+    min-height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .avatar-wrapper {
+      img {
+        max-width: 4.25rem;
+        max-height: 4.25rem;
+        margin: 0 auto 8px auto;
+        display: block;
+        border-radius: 50%;
+      }
+
+      h3 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #283252;
+      }
+
+      p {
+        font-size: 0.85rem;
+        color: #a2a5b9;
+      }
+    }
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    height: 3.75rem;
+    padding: 0 1rem 0 3.75rem;
+    transition: all 0.2s;
+    border-right: 3px solid transparent;
+
+    i {
+      color: #a2a5b9;
+      transition: color 0.2s;
+    }
+
+    &.is-active,
+    &:hover {
+      border-right-color: $active-border-color;
+
+      span,
+      i {
+        color: $active-color;
+      }
+    }
+
+    span {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-left: 1rem;
+      color: #a2a5b9;
+    }
+  }
+}
+
+.is-block {
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .mobile-item.is-block {
+    display: block;
+  }
+
+  .mobile-item.is-flex {
+    display: flex;
+  }
+
+  .mobile-backdrop {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999998;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-item.is-block {
+    display: none !important;
+  }
+
+  .mobile-item.is-flex {
+    display: none !important;
+  }
+
+  .sidebar {
+    .header {
+      justify-content: center;
+    }
+  }
+}
+
+.menu-items {
+  flex-grow: 1;
+}
+
+.text-version {
+  flex-shrink: 0;
+  padding: 0.25rem;
+  font-size: x-small;
+  color: var(--bs-gray);
+  position: fixed;
+  bottom: 1px;
+  left: 2px;
+}

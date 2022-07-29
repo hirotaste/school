@@ -1,0 +1,19 @@
+<div class="sidebar-collapsed" [class.is-inactive]="!useSideBar.isExpanded">
+  <div class="header">
+    <h3>E</h3>
+  </div>
+
+  <a
+    class="menu-item"
+    *ngFor="let item of navItens"
+    [routerLink]="item.url"
+    routerLinkActive="is-active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <i class="{{ item.icon }} fa-fw"></i>
+  </a>
+
+  <a class="menu-item" href="javascript:void(0)" (click)="logout()">
+    <i class="fas fa-sign-out-alt fa-fw"></i>
+  </a>
+</div>

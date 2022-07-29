@@ -1,0 +1,42 @@
+{
+  "students": [
+    {
+      "name": "Manoel Espinosa",
+      "cpf": "55001893011",
+      "email": "manoelespinosa@gmail.com",
+      "telephone": "11983376455",
+      "id": 1
+    },
+    {
+      "name": "Sandra Perini",
+      "cpf": "04709593043",
+      "email": "sandraperini@gmail.com",
+      "telephone": "11985231467",
+      "id": 2
+    },
+    {
+      "name": "asfd",
+      "cpf": "41330343093",
+      "email": "asdf@ghmailc.com",
+      "telephone": "18966552233",
+      "id": 3
+    }
+  ],
+  "classes": [
+    {
+      "id": 1,
+      "name": "Matemática",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Português",
+      "active": true
+    },
+    {
+      "name": "Geografia",
+      "active": false,
+      "id": 3
+    }
+  ]
+}

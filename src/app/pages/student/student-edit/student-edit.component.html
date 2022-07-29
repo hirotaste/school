@@ -1,0 +1,36 @@
+<div class="container content-spacing p-5">
+  <form [formGroup]="form" errorTailor novalidate (ngSubmit)="handleSubmit()">
+    <div class="card-box">
+      <div class="d-flex">
+        <div class="flex-fill">
+          <div class="mb-3">
+            <app-input label="Nome completo do aluno" formControlName="name"></app-input>
+          </div>
+
+          <div class="mb-3">
+            <app-input label="Email" formControlName="email"></app-input>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <app-input label="CPF" formControlName="cpf" mask="cpf"></app-input>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <app-input-telephone label="Telephone" formControlName="telephone"></app-input-telephone>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center my-5">
+      <div class="col-6 col-md-3 d-grid">
+        <a href="javascript:history.back()" class="btn btn-outline-primary">Voltar</a>
+      </div>
+      <div class="col-6 col-md-3 d-grid">
+        <button type="submit" class="btn btn-success">Salvar</button>
+      </div>
+    </div>
+  </form>
+</div>

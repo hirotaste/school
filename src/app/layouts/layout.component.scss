@@ -1,0 +1,10 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout-content {
+  background: #f1f1f1;
+  max-width: 100%;
+  flex: 1;
+}

@@ -1,0 +1,28 @@
+<div class="container content-spacing p-5">
+  <form [formGroup]="form" errorTailor novalidate (ngSubmit)="handleSubmit()">
+    <div class="card-box">
+      <div class="row g-3 align-items-end">
+        <div class="col-md-8">
+          <app-input label="Nome da Materia" formControlName="name"></app-input>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label" for="active">Habilitado</label>
+          <select class="form-select" formControlName="active" id="active">
+            <option [value]="true">Sim</option>
+            <option [value]="false">Não</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center my-5">
+      <div class="col-6 col-md-3 d-grid">
+        <a href="javascript:history.back()" class="btn btn-outline-primary">Voltar</a>
+      </div>
+      <div class="col-6 col-md-3 d-grid">
+        <button type="submit" class="btn btn-success">Salvar</button>
+      </div>
+    </div>
+  </form>
+</div>

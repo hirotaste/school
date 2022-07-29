@@ -1,0 +1,9 @@
+<label *ngIf="label" [for]="id" class="form-label">{{ label }}</label>
+
+<textarea
+  [id]="id"
+  class="form-control"
+  [rows]="rows"
+  [formControl]="control"
+  [attr.placeholder]="placeholder"
+></textarea>
